@@ -1,8 +1,10 @@
 # Scroll Problem in iOS
 
-### Problem 1: If the child element can be scrolled and we reaches to the top-most or bottom-most of that element, its parent element will be scrolled instead even our movement occurs inside the child element.
+### Problem 1:
 
-How to fix this:
+**If the child element can be scrolled and we reaches to the top-most or bottom-most of that element, its parent element will be scrolled instead even our movement occurs inside the child element.**
+
+**How to fix this:**
 https://stackoverflow.com/a/48385733
 
 it seems iOS will only scroll the body once the overlay reaches min or max scrolling. So, set the scrollTop of the overlay to 1 instead of zero, and detect the onscroll event (which on iOS is fired after scrolling ends) and if at max (app.scrollHeight - app.scrollTop - app.clientHeight < 1) set it to one pixel shorter. For example
@@ -23,9 +25,11 @@ overlay.addEventListener('scroll', onScroll)
 
 You might want to add a check and only attach the event if running in iOS.
 
-### Problem 2: We want to disable scrolling on the parent element while allowing scrollling on the child element.
+### Problem 2:
 
-How to do this:
+**We want to disable scrolling on the parent element while allowing scrollling on the child element.**
+
+**How to do this:**
 https://stackoverflow.com/a/18896991
 
 ```javascript
@@ -49,12 +53,21 @@ The idea is that your main scroll is always (to your discretion) disabled, but i
 
 I hope this is what you were looking for. I've had a situation similar to yours, where the main scroll was disabled on tablet, but i wanted an inner scroll to work. This seemed to do the job.
 
-### Problem 3: Momentum scrolling isn't enable on elements by default, it only enable on window, i.e. it works while scrolling the page but doesn't work while scrolling an element.
+### Problem 3:
 
-How to fix this:
+**Momentum scrolling isn't enable on elements by default, it only enable on window, i.e. it works while scrolling the page but doesn't work while scrolling an element.**
+
+**How to fix this:**
 Add these CSS into the element we want to enable momentum scrolling.
 
 ```css
 overflow: scroll;
 -webkit-overflow-scrolling: touch;
 ```
+
+### Problem 4:
+
+**There is scroll bouncing at the top and the bottom of the page. For example, when an user scroll the page to the top, the `scroll` event is triggered by scrolling UP first then bouncing mechanic happens and the `scroll` event is then triggered by scrolling DOWN.**
+
+**How to fix this:**
+??
