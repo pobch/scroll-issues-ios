@@ -1,6 +1,6 @@
 # Scroll Problem in iOS
 
-### Problem 1:
+### Problem 1: Prevent Scrolling on Parent When The Action Occurs on Child
 
 **If the child element can be scrolled and we reaches to the top-most or bottom-most of that element, its parent element will be scrolled instead even our movement occurs inside the child element.**
 
@@ -25,7 +25,7 @@ overlay.addEventListener('scroll', onScroll)
 
 You might want to add a check and only attach the event if running in iOS.
 
-### Problem 2:
+### Problem 2: Prevent Page Scrolling
 
 **We want to disable scrolling on the parent element while allowing scrollling on the child element.**
 
@@ -53,7 +53,7 @@ The idea is that your main scroll is always (to your discretion) disabled, but i
 
 I hope this is what you were looking for. I've had a situation similar to yours, where the main scroll was disabled on tablet, but i wanted an inner scroll to work. This seemed to do the job.
 
-### Problem 3:
+### Problem 3: Momentum Scroll on Elements in The Page
 
 **Momentum scrolling isn't enable on elements by default, it only enable on window, i.e. it works while scrolling the page but doesn't work while scrolling an element.**
 
@@ -65,7 +65,7 @@ overflow: scroll;
 -webkit-overflow-scrolling: touch;
 ```
 
-### Problem 4:
+### Problem 4: Bounce Scroll
 
 **There is scroll bouncing at the top and the bottom of the page. For example, when an user scroll the page to the top, the `scroll` event is triggered by scrolling UP first then bouncing mechanic happens and the `scroll` event is then triggered by scrolling DOWN.**
 
