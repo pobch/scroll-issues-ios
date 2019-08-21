@@ -7,12 +7,14 @@ window.addEventListener(
   { passive: false }
 )
 
-document.querySelector('.modal').addEventListener('touchmove', e => {
+const modal = document.querySelector('.modal')
+
+modal.addEventListener('touchmove', e => {
   console.log('modal scrolling')
   e.stopPropagation()
 })
 
-const modal = document.querySelector('.modal').addEventListener('scroll', () => {
+modal.addEventListener('scroll', () => {
   if (modal.scrollTop < 1) {
     modal.scrollTop = 1
   } else if (modal.scrollHeight - modal.scrollTop - modal.clientHeight < 1) {
