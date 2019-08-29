@@ -71,3 +71,9 @@ overflow: scroll;
 
 **How to fix this:**
 ??
+
+### Problem 5: Page Scrolled Down at the Moment an Address Bar is Shown
+
+**When an user switch the page, the page is scrolled to top by `scrollTo(0, 0)` in our code. Then, the address bar will be shown by the browser. Then, **this is the issue**, the page will be scrolled down a little by the browser**
+
+Need more investigation
